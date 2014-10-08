@@ -1,0 +1,918 @@
+Wed Jan 14, 2004
+	* Released 0.5.0
+	* Fixed changelog entries that read to 2003 that were actually in 2004
+	
+Thu Jan 8, 2004
+	Chris:
+	* main.eaf: Fixed spelling error (fixes bug #166)
+	* src/land/land_dlg.c: Check for division by zero (code is now disabled though) - Fixes bugs #160, #159, #153, #146, #144
+	* src/sprite/sprite.c: Give escape pod a little boost and have ships stop firing at the escape pod (fixes bug #182)
+	
+Wed Jan 7, 2004
+	Chris:
+	* src/ai/ai.c: Fixed ai_turn_towards() (fixes bug #161)
+	
+Tue Jan 6, 2004
+	Chris:
+	* src/comm/comm.c: Increased default comm/radar distance
+	* src/ai/gate_defender.c: Added simple patrolling AI for gate defenders
+	* src/force/force.c: Removed debug code
+	* src/land/land_dlg.c: Disabled ugly free mass display in landing dialog until next version when it can be cleaned up
+	* src/land/land_dlg.c: Fixed bug #168
+	* src/sprite/gate.c: Fixed bug #154
+	* src/system/esf.c: Fixed bug #102
+	
+Mon Jan 5, 2004
+	Chris:
+	* src/sprite/target.c: Updated targetting logic
+	* src/sprite/sprite.c: Fixed a bug where you couldn't target a ship that had cloaked before
+	* src/hud/hud.c: Fixed a bug where the radar didn't display a ship that had cloaked before
+	* src/game/scenario.c: Fixed a bug where custom_draw_area wasn't created or was created at the wrong time (caused scenario to draw labels on top of each other due to incorrect erasing - custom_area_draw was needed to erase)
+
+Sat Jan 3, 2004
+	Chris:
+	* src/sprite/r_ships.c: Removed r_ships system
+	* src/sprite/sprite.c: Rearranged damage_ship() to avoid invalid alliances
+
+Fri Aug 22, 2003
+	Chris:
+	* Fixed broken outfit code
+
+Tue Aug 19, 2003
+	Chris:
+	* GUI listbox autoselects first item
+
+Sun Aug 17, 2003
+	Chris:
+	* Bug fixes: #104, #106
+
+Sat Aug 16, 2003
+	Chris:
+	* Bug fixes: #136, #137, #139, #141
+
+Fri Aug 15, 2003
+	Chris:
+	* Bug fixes: #138
+	* Added free mass display when buying outfit items
+
+Thu Aug 14, 2003
+	Chris:
+	* Bug fixes: #101, #110, #118, #131, #134
+	* Improved textbox scrolling a little but not enough to consider bug #130 fixed
+
+Wed Aug 13, 2003
+	Chris:
+	* Applied spelling fixes from Matt Gauger
+	* Bug fixes: #123, #124, #125, #126, #127, #128, #129
+	* Improvements to trader a.i. (I think we need a generic attack function to handle all the various maneuvers that depend on ship models)
+	* Made Earth Tugship a little more powerful
+
+Mon Aug 11, 2003
+	Chris:
+	* Moved radar into hud code (where it belongs) - fixes bug #109, also fixes the same problem on FreeBSD
+	* Changed escape key for navigation (bug #111)
+	* Fixed bug with crashing upon ship purchase
+	* Changes to input system (pretty much rewrote get_input())
+
+Sun Aug 10, 2003
+	Chris:
+	* Removed #ifdefs for the strlen() fix as FreeBSD needs it too (or at this point it needs changing altogether)
+
+Sat Aug 9, 2003
+	Chris:
+	* Got Epiar to compile in FreeBSD - esf parser seems to have cross-platform issues again (just lika da Windows yo foe)
+
+Fri Aug 1, 2003
+	Chris:
+	* Fixed a lot of the stuff I broke
+	* Bug fixes: #114
+	* Fixed bug with target distance updates
+	* Fixed crash with r_ships and normal ship count interaction
+
+Thu Jul 31, 2003
+	Chris:
+	* Massive changes (code is better in the end) - probably broke a lot (firing already is broken I believe)
+
+Mon Jul 28, 2003
+	Chris:
+	* Fixed minor bug with landing (get distance from planet's center, not upper left)
+
+Sun Jul 27, 2003
+	Chris:
+	* Added src/ai/maneuvers.c,src/ai/maneuvers.h that contain generic maneuvers; currently two attack patterns, but this will hopefully build up for better a.i. later
+	* Fixed an extremely minor drawing issue when selecting custom scenarios
+
+Fri Jul 25, 2003
+	Chris:
+	* Changed some ship types around, improved more on the r_ships system (all planet defintions have traffic and battle_chance values)
+	* Fixed some crashes from the new ship changes
+	* Added the much wanted text movement on buttons
+
+Wed Jul 23, 2003
+	Chris:
+	* Fixes to the r_ships system and crashing caused by the ship changing
+
+Tue Jul 22, 2003
+	Chris:
+	* Removed some code repition from landing dialog outfit buying button callback
+	* Rearranged some code that had to do with what outfits the player had
+	* Made targetting window lighter
+	* Fixed bug: #103
+	* Added the status scanner upgrade back (on Tirol)
+	* Fixed "bullet time" hail bug
+	* Major changes to the way ships work internally
+	* Removed and restarted r_ships code - implemented but a warship a.i. class is still needed and some tweaking to get alliance battles going
+
+Sun Jul 20, 2003
+	Chris:
+	* Fixed a bug where you could be killed twice if they shot really faster
+	* Made Foukou scenario a little easier
+	* Fixed	a bug where the radar kept moving after you died (thanks Adam!)
+	* Boarding a ship now combines the fuel from both ships
+		
+Sat Jul 19, 2003
+	Chris:	
+	* Moved ship types and upgrades around to different planets
+	* Added player's position to nav map (kinda nice)
+	* Fixed buying ships so you get new weapons if the new ship has them
+	
+Fri Jul 18, 2003
+	Chris:
+	* Added another ship type
+	* Applied wrapping for target names in the targetting window
+	* Added nav maps as items to buy
+
+Thu Jul 17, 2003
+	Chris:
+	* Finished ESF integration
+	* Gave pirate a.i. the ability to fire
+	* Added some more ships to the Vargeson scenario
+
+Wed Jul 16, 2003
+	Chris:
+	* Added five planets and two gates
+	* Fixed planet selection errors
+	* Fixed refueling hud drawing error
+	* Fixed bugs #92, #93, #94, #96
+	* Fixed a bug with summary screens when the planet surface wasn't in the scenario file
+	* Fixed spelling error (thanks tomble!)
+
+Tue Jul 15, 2003
+	Chris:
+	* Worked on the nav map - fixed timer issues with it, fixed calculations, etc.
+	* Fixed particle explosions
+	* Fixed two Win32 access violation bugs, both having to do with buffer overflows (char a[25] aint enough most of the time)
+
+Mon Jul 14, 2003
+	Chris:
+	* Added current FPS counter to FPS information (values kinda off though)
+	* Added one last outfit item before 0.5.0, an engine booster, which you no longer have by default
+	* Redraw credits when buying
+
+Sat Jul 12, 2003
+	Chris:
+	* Merged in changes for Win32 port
+	* Disabled rotation caching (too many probs at the last minute)
+	* Fixed bug where asteroids just appeared
+	* Fixed bug with hailing capitol cruiser
+
+Fri Jul 11, 2003
+	Chris:
+	* Added the targetting dot back in (from the days long past)
+
+Thu Jul 10, 2003
+	Chris:
+	* Fixed it so that a ship that hasn't been created yet or is landed cannot be targetted
+	* Disabled ships no longer slow down
+	* Added ammo left as part of the weapon name tab
+	* Fixed a bug where if you targetted a gate the distance would not update
+	* Fixed a bug with pressing cancel on the scenario select dialog
+	* Fixed jerky turning on a.i. ships
+	* Fixed some targetting issues for a.i. ships
+	* Fixed a drawing issue with the end scenario dialog
+	* Added caching of ship rotations to avoid costly in-game rotations
+
+Wed Jul 9, 2003
+	Chris:
+	* Borrowed code from SDL_gfx and put it in src/system/video/zoom.c and src/system/video/zoom.h (for zooming on images)
+	* Added LICENSE.ZOOM which ONLY applies to src/system/video/zoom.c and src/system/video/zoom.h, as they're taken from SDL_gfx-2.0
+	* Used zooming code in targetting display if the target is too big
+	* Simplified the listbox drawing callback for the shipyard
+	* Used zooming code for shipyard listbox so ships don't flood out of the listbox view area
+	* Fixed a crash with buying hulls on planets without hulls
+	* Fixed a drawing bug with listboxes that had no items
+	* Fixed a crash when hailing ships (showed up in Vargeson scenario)
+	* Fixed crash on Hunt Foukou scenario that had to do with ships not being sorted yet, so sorting ships has higher priority in update code than update_ai()
+	* Added code to ensure outfit item names wouldn't flood outside listbox drawing area
+	* Internal changes for drawing recticles
+	* Added recticle around player's target
+	* Disabled status menu
+	* Added notice about the tutorial
+
+Tue Jul 8, 2003
+	Chris:
+	* Upped amount of money stolen from disabled ships as 0.5.0 doesn't look like it'll have many other ways of getting money
+	* Fixed a bug with the number of asteroids spawned (thanks Mike!)
+	* Added the cap to the Starfield density label to reduce confusion when the values reset
+	* Fixed crash with weapon cycling when no weapon and improved weapon cycling logic
+	* Removed toggle audio key in key config. menu
+	* Fixed bug with asteroids changing course, slowing down, and being found stopped
+	* Made the appearance of asteroids slightly more random
+	* Added collision detection for asteroids to non-player sprites
+	* Got the radar working again (shows ships again and blinks your target, ship or gate)
+	* Fixed a bug where closing the hail window resulted in a giant black box
+	* Added code to reset textbox scrollbar when text in textbox changes
+	* Fixed refuel button - don't show it if you're full on fuel
+
+Sun Jul 6, 2003
+	Chris:
+	* Fixed targetting display & redid targetting system a little
+	* Got hailing working again
+
+Fri Jul 4, 2003
+	Chris:
+	* Fixed another listbox drawing bug
+	* Added average FPS display option (on Jul 2 or Jun 30)
+	* Attached values to AI dist. update and starfield density in options menu
+
+Wed Jul 2, 2003
+	Chris:
+	* Fixed listbox drawing bug
+	* Changes to target cycling
+
+Mon Jun 30, 2003
+	Chris:
+	* Switched to EAF v1.1.0 (ntohl/htonl conversion for file sizes and version header)
+	* Finished HUD
+	* Fixed a timer bug with unpausing the timer
+	* Finally fixed average fps count
+	* Added refuel button to summary tab
+
+Sun Jun 29, 2003
+	Chris:
+	* Completed escape pod
+	Jared:
+	* Fixed font color problem
+	* Removed MS-DOS style returns
+
+Thu Jun 26, 2003
+	Chris:
+	* Added Pod V ship (first escape pod)
+	* Fixed a bug where hull regeneration would regenerate you back to life (thanks Eric!)
+
+Wed Jun 25, 2003
+	Chris:
+		* Added ability to buy hull plating (five hulls currently available)
+				* Added ability for hulls to repair hull strength (good idea Eric!)
+		* Reenabled asteroids and added asteroids.esf to main.eaf (defines asteroid fields)
+		* Fixed text entry cursor drawing
+
+Mon Jun 23, 2003
+	Chris:
+		* More summary work (added get_planet_description())
+		* Updated back to afont-0.4 (oops) and added it to CVS (need to remove 0.3)
+
+Sun Jun 22, 2003
+	Chris:
+		* Updated afont code to vers. 3 (I thought I had done this already)
+		* Worked on summary screen
+
+Sat Jun 21, 2003
+	Chris:
+		* Ensure first item added to btab becomes selected (landing dialog)
+		* Started summary tab in landing dialog
+		* Added gui_create_label_from_font() to allow more versatile labels
+
+Fri Jun 20, 2003
+	Chris:
+		* Fixed planet cursor bug
+
+Wed Jun 18, 2003
+	Chris:
+		* Fixed nav map crash
+		* Added Eric's new menu bg
+		* Fixed crash in Hunt Foukou scenario
+		* Started Vargeson scenario
+
+Tue Jun 17, 2003
+	Chris:
+		* Fixed listbox bug with selected items while scrolled down
+		* More work on outfitting, added new weapons and added ammo into Epiar weapons systems
+		* Fixed a crash when landing on planets w/o outfits
+		* Fixed a bug w/ free mass when buying/taking a ship
+
+Sat Jun 14, 2003
+	Chris:
+		* Converted the loading of scenarios/scenario objectives to ESF format
+		* Added timer pausing, so on Defend the Nepharis, reading the intro message for too long doesn't cause instant enemies to appear (respects a puased delay time)
+		* Improved the mission objective logic for destroying a ship and landing a ship (fixes numerous irregularities in the Defend the Nepharis scenario)
+
+Sat May 31, 2003
+	Chris:
+		* Replaced a menu screen with a newer one. I still want to replace a few more though
+
+Fri May 30, 2003
+	Chris:
+		* Reenabled force subsystem after changes to the math
+
+Thu May 29, 2003
+	Chris:
+		* Fixed a bug where boarding a ship didn't set your new free mass
+		* Switched alliances and engines to proper ESF format
+		* Closed irrelevent bugs: #10, #87
+		* Added weapon cycling although the logic could be better (there are slight annoyances in how it works)
+		* Switched all font rendering to use afont's blended mode (looks much better)
+
+Wed May 28, 2003
+	Chris:
+		* Fixed text positions for a shipyard frame
+		* Fixed get_manufacturer() to use ESF
+		* Major internal change: weapon_mount is now a struct _ship variable so ships can have customizable weapons
+			* Weapons may be added on (purchased), or, if I wrote it, support for weapons in ships.esf, but are inherited from ship type as well
+
+Tue May 27, 2003
+	Chris:
+		* Fixed some bugs caused by hasty editing
+		* Adjusted numerous text placements (SDL_ttf -> afont x,y differences)
+		* Implemented (and changed all Epiar code to use) wrappers for afont to do various additional things
+		* Updated afont code to 0.4
+
+Sat May 24, 2003
+	Chris:
+		* Fixed get_description() for types so shipyard descriptions work again
+		* Converted planets to ESF
+		* Threw out SDL_ttf and began using Jared's afont code
+		* Bug fixes
+		* Got rid of old debug and error messages that don't apply anymore
+		* Updated Entropy logo to use Adam's AA text
+		* Did more work on outfit screen - visual differences finally :-)
+
+Thu May 22, 2003
+	Chris:
+		* Converted types to ESF
+		* Fixed bugs in ESF parser
+
+Wed May 21, 2003
+	Chris:
+		* More ESF conversion
+		* Merged in latest ESF tree (single depth subitem support and better line recognition)
+		* Threw some UI elements up on the Outfit tab (landing dialog) to encourage me to work on that
+	
+Tue May 20, 2003
+	Chris:
+		* Reworked weapons a bit and began implementing the .ESF file spec
+
+Sun May 18, 2003
+	Chris:
+		* Little bit more work on outfits (weapons specifically)
+
+Sat May 17, 2003
+	Chris:
+		* Began work on the final outfit ship system
+
+Mon May 12, 2003
+	Chris:
+		* More work on making Epiar scenario-based (moved ships into main.eaf, etc.)
+
+Sun May 11, 2003
+	Chris:
+		* Changed update_starfield() to hopefully fix the long loops
+		* Disabled force system as it didn't work right (and caused the starfield bug in the first place)
+		* Fixed it so cloaked ships do not appear on radar and you cannot continue to target them
+		* Fixed a tiny memory leak with unloading player data when the player had used an auto-targetting turret
+		* Increased ship description buffer so the shipyard landing descriptions do not get cut off
+
+Sat May 10, 2003
+	Chris:
+		* Worked on ship cloaking some more (Foukou scenario can be beaten now)
+
+Wed Apr 30, 2003
+	Chris:
+		* Got rid of some compiler warnings (got rid of stupid button callback format)
+		* Changed the exact time when a button callback is done (fixes a bug in canceling a custom scenario)
+		* More work on the "Hunt Cptn. Foukou" scenario - added cloaking and simple a.i. for pirates
+
+Tue Apr 29, 2003
+	Chris:
+		* Beginnings of "Hunt Cptn. Foukou" mission
+		* Fixed some bugs in reading scenario files
+		* Changed behavior of scenrios - now all Epiar data _is_ loaded, and you can simply append more engines/shields/types/etc if you wish
+		* Bumped version to 0.5.0 (still unstable CVS though)
+		* Finally fixed that annoying initially wrong position chunk issue
+
+Thu Apr 24, 2003
+	Chris:
+		* Fixed some bugs with scenarios
+		* Fixed a memory leak in close_scenario()
+		* Closed invalid ('cause of age) bugs: #24, #28
+
+Wed Apr 23, 2003
+	Chris:
+		* Reenabled A.I. firing
+		* Loads of work on scenario - first scenario of escorting the Nepharis is playable and challenging! :-)
+
+Tue Apr 22, 2003
+	Chris:
+		* More work on converting Epiar to scenario-based EAF file
+
+Mon Apr 21, 2003
+	Chris:
+		* Implemented the EAF file format and moved quite a lot of things to that idea
+		* Began conversion of Epiar into scenario-based play (so simulation mode/arcade mode/missions is easier to set up)
+
+Sat Apr 19, 2003
+	Chris:
+		* Reenabled HUD messages
+		* Fixed a small but annoying bug where a new UI session might not respond to input initally for a second or so
+		* Removed extraneous new game message dialog
+		* Removed Monkey Shine logo at Eric's suggestion
+		* Fixed humorous bug with HUD messages for landing clearance on non-landable objects
+
+Fri Apr 18, 2003
+	Chris:
+		* Applied new Entropy logo
+		* Played with AI
+		* Fixed some odd math (motions became too predictable)
+		* Began work on upgrade system
+
+Thu Apr 17, 2003
+	Chris:
+		* Began using Bitstream Vera 1.1 fonts (license in LICENSE.FONTS)
+		* Minor changes to UI
+
+Sat Apr 12, 2003
+	Chris:
+		* More networking work (new packet format, net_sprite ship idea, etc.)
+		* Changed data types for some major game variables (double->float and double->int, etc.)
+
+Wed Apr 09, 2003
+	Chris:
+		* More networking work
+	Mark:
+		* Simplified trig.c a little
+
+Wed Apr 02, 2003
+	Chris:
+		* Resynced with UI tree (bug fixes, more widgets, etc.)
+		* Merged in the new (unfinished) options menu (the configuration/in-game menu)
+		* Implemented auto-loading plugins in Unix (just drop it in the plugins/ dir)
+
+Sat Mar 29, 2003
+	Chris:
+		* Began applying new UI
+
+Sun Mar 23, 2003
+	Chris:
+		* Applied Adam's new weapon bar images on the HUD
+
+Wed Mar 05, 2003
+	Chris:
+		* Did more nav map work (map probably over 1/2 done)
+
+Sat Feb 22, 2003
+	Chris:
+		* Fixed a small HUD issue
+		* Worked on nav map
+
+Wed Feb 19, 2003
+	Chris:
+		* Got rid of some extraneous debug messages
+		* Turned off OpenAL for now (not using it and easier to debug w/o the threads)
+		* Fixed NAUDIO preproc flag
+
+Tue Feb 18, 2003
+	Chris:
+		* Pretty sure random crashing is gone (stupid multithreaded OpenAL)
+		* Fixed force subsystem
+		* Applied a dying-ship/about-to-explode asteroid's momentum to it's flying apart chunks and particles (much cooler)
+
+Mon Feb 17, 2003
+	Chris:
+		* Did some work to stop memory corruption/random crashing bug. I don't know if it's resolved or not.
+
+Sat Feb 15, 2003
+	Chris:
+		* Implemented directional shielding (but I need a new arc function, as this one is slow)
+
+Thu Feb 13, 2003
+	Chris:
+		* Little more work on weapons system (can fire secondary now)
+		* Fixed some NAUDIO compiling errors (thanks Xip!)
+
+Mon Feb 10, 2003
+	Chris:
+		* Worked on the HUD a bit more
+		* Added Marco's new menu bg to the pool of menu background images
+
+Sat Feb 08, 2003
+	Chris:
+		* Fixed a memory leak in unloading weapon types
+		* Fixed a memory leak in get_absolute_path()
+		* Fixed a memory leak in unloading weapon mounts
+		* Corrected issues with exploding asteroids
+
+Tue Feb 04, 2003
+	Chris:
+		* Added "landing okay, come on it" type messages when landing
+
+Mon Feb 03, 2003
+	Chris:
+		* Corrected asteroid animation jerkiness
+
+Sun Feb 02, 2003
+	Chris:
+		* Implemented two of Eric's new menu backgrounds
+
+Sat Feb 01, 2003
+	Chris:
+		* Implemented newer asteroid image
+		* Updated HUD image
+
+Thu Jan 30, 2003
+	Chris:
+		* Little work on progress bars
+		* Fixed (?) force system, but cannot check due to another a bug in the chunking system
+
+Wed Jan 29, 2003
+	Chris:
+		* Added fuel system
+		* Played with networking code
+		* More work on asteroid subsystem (asteroids are bitmapped and animated, although the frames are a little too jumpy)
+
+Tue Jan 28, 2003
+	Chris:
+		* Began work on asteroid subsystem
+
+Sun Jan 26, 2003
+	Chris:
+		* Began work on Adam's 0.3.0 HUD
+		* Changed and fixed some HUD code
+		* Finally fixed oval drawing issues although I need a resolution to the blitted_rects[] array (seems kinda big ...)
+
+Wed Jan 22, 2003
+	Chris:
+		* Fixed a Win32 compile error
+		* Improvements to racing (corrected reset code and drawing)
+		* Changed the internals of planets around and added space stations to the code, also, the ability to reject landings (not based on A.I. yet though)
+		* Fixed comm so it only shows what's on the radar
+		* Began work on the force subsystem to push things around
+		* Fixed a bug with starfield motion (I think)
+		* Optimized HUD target display's distance display to only update every 175ms
+		* Completely tore apart weapons/fire code (needs to be redone still)
+
+--= Epiar 0.2.2 Released (Tuesday, January 21, 2003) in a separate branch =--
+
+Tue Jan 21, 2003
+	Chris:
+		* Added functionality for Epiar to recognize it's location if launched from somewhere in the PATH variable (valgrind shows it may have one leak, gotta check it out later)
+
+--= Epiar 0.2.1 Released (Monday, January 20, 2003) in a separate branch =--
+
+--= Epiar 0.2.1-RC3 Released (January 2003) in a separate branch =--
+
+Mon Jan 20, 2003
+	Chris:
+		* Updated radar to new drawing system
+		* Made targetting ever so slightly better looking
+		* Fixed line intersection detection with vertical lines
+		* Tiny bit more racing work
+		* Replaced filesystem path finding function but it still doesn't understand symlinks from the PATH variable
+
+Sun Jan 19, 2003
+	Chris:
+		* Fixed up some code
+		* More work on racing (buoys are drawn now)
+
+Sat Jan 18, 2003
+	Chris:
+		* More work on enhanced drawing stability/conversion
+		* Fixed bugs: #56, #66, #72, #73
+		* Cleaned up input and make it slightly more logical
+		* Began racing code
+
+Wed Jan 15, 2003
+	Chris:
+		* Applied a fix for capturing the menu key from 0.3.0 to fix an error from Mike
+
+--= Epiar 0.2.1-RC2 Released (Tuesday, January 14, 2003) in a separate branch =--
+
+Tue Jan 14, 2003
+	Chris:
+		* Fixed bugs: #69, #70
+
+Mon Jan 13, 2003
+	Chris:
+		* Fixed bugs: #67, #68, #71
+
+--= Epiar 0.2.1-RC1 Released (Monday, January 13, 2003) in a separate branch =--
+
+Sun Jan 12, 2003
+	Chris:
+		* Implemented new (and faster) drawing method (preproc flag BLIT_METHOD_2)
+
+Fri Jan 10, 2003
+	Chris:
+		* Fixed bugs: #49, #61, #64
+
+Tue Jan 07, 2003
+	Chris:
+		* Cleaned up path finding code so it works with loki_setup's "Play!" button and Gnome/KDE menu icons (I think? Needs more testing)
+		* Modified the behavior of the gui a little
+
+Sun Jan 05, 2003
+	Chris:
+		* Fixed bugs #53, #57, #58, #60
+
+Sat Jan 04, 2003
+	Chris:
+		* Fixed bugs #50, #52, #59
+		* Got rid of decimal places on target display and hailing
+		* More work on new landing dialogs (internal changes)
+
+--= Epiar 0.2.0 Released (Friday, January 03, 2003) in a separate branch (broken off at the 0.2.0-RC2 release) =--
+
+Wed Jan 1, 2003
+	Chris:
+		* Rewrote draw_wrapped_text as draw_wrapped_text_pixels to be simpler and faster
+		* Removed text_fading code
+
+Tue Dec 31, 2002
+	Chris:
+		* Optimized starfield erasing/drawing code more
+		* Optimized particle erasing/drawing
+		* Fixed a bug where ships you destroyed remembered you
+		* Fixed a graphic glitch with the image for the planet Andoria
+
+Mon Dec 30, 2002
+	Chris:
+		* Corrected a mistake in resolving selected elements in tables
+
+Sun Dec 29, 2002
+	Chris:
+		* Changed erase and draw starfield functions to do pointer math for drawing and not function calls
+		* Added five planets and three and a half ship types (one type is missing the top down view for now)
+
+Sat Dec 28, 2002
+	Chris:
+		* Fixed a Win32 #ifdef that caused the upgrades table to crash in Win32 (forgot to return NULL for names not found)
+		* Added necessary #define and functions to get Jared's rotation code working under Win32 (faster, no rotation crashes)
+		* Updated the AUTHORS, IDEAS, and ISSUES files
+		* Finished implementing plugin code for Win32 (faked plugins)
+		* Decreased sleeping time in menu (complaints of hard to click on items)
+
+Fri Dec 27, 2002
+	Chris:
+		* Cleaned up text_fading.c (had one invalid byte read)
+		* Cleaned up more invalid reads/writes (Valgrind is a great debugging program!)
+
+--= Epiar 0.2.0-RC2 Released (Wednesday, December 25, 2002)  =--
+
+Wed Dec 25, 2002
+	Chris:
+		* Bug fixes: #26, #44, #45, #46
+		* Bumped version to 0.2.0-RC2
+		* Fixed error message (thanks Mike!)
+
+Tue Dec 24, 2002
+	Chris:
+		* Gave version to keybindings file (yesterday) but also changed keybindings to a binary file
+		* Updated configure controls dialog
+		* Bug fixes: #11, #32, #37, #38, #40, #41, #42
+		* Half updated the Win32 project files
+		* Cleaned up HUD erasing and drawing (works better)
+
+Mon Dec 23, 2002
+	Chris:
+		* Cleaned up illegal memory access by ep_create_button()
+		* Cleaned up memory leak by destroy_and_respawn() function (used commonly)
+		* Fixed another memory leak in update_fading_text() where the original string wasnt being freed as a slot was over
+		* Fixed a counter issue in uninit_hud()
+		* Various misc. cleanups
+		* Fixed bugs: #27, #31, #34, #35, #36
+
+Sun Dec 22, 2002
+	Chris:
+		* Resolved bug #30, #33
+		* Fixed moderate memory leak (and source of possible memory corruption) in unload_ships() (big whoops on the loop counter)
+		* Cleaned up unloading functions such that new scenarios always appear the same (no battles at the beginning, etc.)
+
+--= Epiar 0.2.0-RC1 Released (Saturday, December 21, 2002)  =--
+
+Sat Dec 21, 2002
+	Chris:
+		* Commented out the Upgrades dialog "Sell" button
+		* Cleaned up NDEBUG output
+		* Little more A.I. work
+
+Fri Dec 20, 2002
+	Chris:
+		* More A.I. work
+		* Fixed menu fading
+		* Bumped versions to 0.2.0-RC1
+
+Tue Dec 17, 2002
+	Chris:
+		* Optimized the menu (sorta broke it a little, needs slight fixing)
+
+Mon Dec 16, 2002
+	Chris:
+		* Finished the HUD message system
+		* Began tutorial (as a plugin, ooo!)
+		* Bugs resolved: #2, #20
+
+Sun Dec 15, 2002
+	Chris:
+		* Fixed a cursor hide in communications code
+		* Radar improvements: current target blinks, jump gates now show up
+		* More work on communications code
+		* Bugs resolved: #1, #3, #14, #15, #22, #25
+		* Added ability to board ships
+
+Sat Dec 14, 2002
+	Chris:
+		* Misc. fixes and corrections
+		* Changed hailing to a more complete system (need to add ability to hail other ships though)
+
+Wed Dec 11, 2002
+	Chris:
+		* Began some major changes and reorganization of the ai code
+
+Tue Dec 10, 2002
+	Chris:
+		* Ships whose hull integrity has dropped below 1/3 are "disabled" and cannot act
+		* Internal/performance improvements:
+			* blit_surface() passes two pointers for SDL_Rect not two full SDL_Rect
+			* Removed the horribly slow blit_surface_black() and simply used colorkeys (duh!)
+		* Bug fixes:
+			* Fixed crash in uninit_chunks() where memory that was already freed was being freed
+
+Sun Dec 8, 2002
+	Chris:
+		* Added ability to lock/unlock keys internally (bug #8)
+		* Gave Tirol a surface, shipyard, item upgrades, and description (bug #4)
+		* Moved everything out of images/ and put it in data/images/
+		* Fixed some memory leaks
+		* Made gate patrollers appear in different locations (bug #16)
+		* Stopped freeing the player's target since it's already freed sometimes (bug #17)
+
+Sat Dec 7, 2002
+	Chris:
+		* Negative shield/hull values fix
+		* Fixed HUD credits update issue
+		* Changed the way the status sensor and targetting works (draws to HUD)
+		* Made shipyard actually charge cash for ships and such
+		* Added an X to the nav map (KF in irc.freenode.net,#epiar complained, what could I do? :-))
+		* Cleaned up init and uninit of games a lot (making room for scenarios and the tutorial)
+		* Fixed rather large memory leark in unload_planets()
+
+Fri Dec 6, 2002
+	Chris:
+		* Finished menu
+
+Thu Dec 5, 2002
+	Chris:
+		* Finished shipyard
+
+Wed Dec 4, 2002
+	Chris:
+		* Changed add_element_to_table() to allow NULL description pictures
+		* More shipyard work
+		* Reworked the way ep_show_table() draws a table somewhat
+		* Added --skip option to skip intros
+		* Fixed Makefile so as to not recompile the plugins everytime
+
+Tue Nov 26, 2002
+	Chris:
+		* Fixes and additions to the status sensor plugin
+		* Increased target cycling speed (press t to cycle through targets)
+		* Changed main loop to get and respond to input before erasing the frame (to fix a gui transparency issue)
+
+Mon Nov 25, 2002
+	Chris:
+		* Finished writing the status sensor plugin
+
+Sun Nov 24, 2002
+	Chris:
+		* Added wrapped text and planet, New Russia, along with gates to it
+
+Thu Nov 21, 2002
+	Chris:
+		* Added target cycling, beginnings of status sensor plugin, and moved plugins to $(SRC_DIR)/plugins
+
+Wed Nov 20, 2002
+	Chris:
+		* Implemented text wrapping
+		* New plugin: Mark II Laser
+
+Tue Nov 19, 2002
+	Chris:
+		* Implemented draw_wrapped_text() (finally) and ... sorta. I'm thinking something's wrong with it, heh
+		* Tried to come up with things to do for Kate's birthday. Oops, that doesn't go here. (I thought the ChangeLog could use a few more entries)
+
+Sun Nov 17, 2002
+	Chris:
+		* Finally wrote get_absolute_path() function and converted all paths to use it (I think all ...)
+		* Fixed a bug in some plugins where the "Never mind" option after clicking buy wasn't handled
+
+Sat Nov 16, 2002
+	Chris:
+		* Fully implemented plugins for upgrading. New plugins: sublight laser, laser turret, missile launcher, and missiles
+
+Thu Nov 14, 2002
+	Chris:
+		* Changed music to begin as soon as the game does so its playing full by the time the menu comes up
+		* Began implementing plugins
+		* Reimplemented radar as a plugin (for an example)
+
+Mon Nov 11, 2002
+	Chris:
+		* Began charing ($$$) at jump gates
+		* Added some more sounds (menu motion/selection sounds) and a landing toggle sound
+		* Added menu music and did a few menu optimizations
+		* Gave music updates it's own thread to resolve conflicts where the other code would be tied up (gui)
+		* Misc. bug fixes
+
+Sun Nov 10, 2002
+	Chris:
+		* Finally added a simple timer to GUI for timed callbacks
+		* Began menu
+
+Thu Nov 7, 2002
+	Chris:
+		* Added a display in the upper left to display the number of credits
+		* Changed order of drawing to do hud last (makes sense, it goes on top of the display)
+		* Added timers to the gui (for interval-based callbacks)
+		* Switched gui to SDL_PollEvent(). Seems a little more sluggish but cpu usage is still good
+		* Worked on shipyard a little
+
+Wed Nov 6, 2002
+	Chris:
+		* Jump gate improvements - enlarged them, corrected jump point, corrected momentum issues
+		* Improved A.I. system (added consecutive points to fly to), and gave A.I. to jump gate patrollers
+		* Corrected gate patroller in-game image (needed to be rotated)
+		* Fixed a bug with exploding chunks (forgot to change extern float to extern double)
+		* Updated the accuracy of a lot of functions
+
+Tue Nov 5, 2002
+	Chris:
+		* Fixed intro bitmap fading
+		* Removed some extraneous gate debug (oops)
+		* Fixed an odd bug with rotation timing (gui wasnt updating average_loop_time)
+
+Thu Oct 24, 2002
+	Chris:
+		* Implemented jump gates (everything except the communications with it and the whole jumping thing)
+
+Wed Oct 16, 2002
+	Chris:
+		* Forgot to document that lots of work on upgrading was done
+		* Began nav map
+		* Finally fixed annoying bug that caused Epiar to lock at start
+
+Sat Oct 12, 2002
+	Chris:
+		* Changed ship type comm_front and wireframe to the filename, instead of the actual bitmap data
+		  (less memory usage and faster loading)
+		* Began work on the ship status screen (F4 by default)
+		* Huge amount of work on landing dialog (buying/selling screen almost done)
+
+Wed Oct 09, 2002
+	Chris:
+		* While improving A.I./tactical code, the need arised for much more information about a target,
+		  beyond a mere struct _ship pointer, so I introduced the struct _target and converted the code to
+		  use that, although I haven't written the functions to acquire targets for the struct.
+
+Tue Oct 08, 2002
+	Chris:
+		* Added default behavior to obey whatever bpp OS gives us if requested bpp is denied
+		* Changed a lot of video code to work with both 16bpp and 32bpp displays (instead of just 16bpp)
+
+Sun Oct 06, 2002
+	Chris:
+		* Added bpp command line switch after discovering 16->32bpp conversions on most machines
+
+Thu Oct 03, 2002
+	Chris:
+		* Gave in-game menu options "Audio Options" the feature not implemented dialog
+		* Began landing dialog (ugh, so much work ahead ...)
+			* Added landing key
+			* Added planet selection code
+			* Began actual dialog (planet picture, planet name, buttons)
+
+Wed Oct 02, 2002
+	Chris:
+		* Added basic radar
+		* Made HUD progress bars gradient (could use a 'lil optimization though)
+		* New A.I. function, void slow_down(struct _ship *ship), so they face their targets faster
+
+Tue Oct 01, 2002
+	Chris:
+		* Defender A.I. improvement (added box patrols)
+		* Overall A.I. enhancement (added the ability to set a point to fly to)
+
+Sun Sep 29, 2002
+	Chris:
+		* Changed closest ship recticle to only display if you have a turret weapon
+		* Defender A.I. improvement
+
+-= okay, let's get started on getting epiar-0.2.0 ready ... secretly ... =-

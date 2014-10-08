@@ -1,0 +1,73 @@
+ Epiar - Open Source Space Adventure/Arcade Game
+ -----------------------------------------------
+                 (wwww.epiar.net)
+
+ Contents
+ --------
+ I. Welcome
+    a) What is Epiar?
+    b) When will Epiar be finished?
+ II. System Requirements
+    a) Linux x86
+    b) Windows 32
+    c) Other Platforms
+ III. Planned Features
+ IV. Contact
+
+ I. Welcome
+ ----------
+  a) What is Epiar?
+     Epiar is a space combat/adventure game written in C on Linux,
+designed to be a multiplatform free, open source game. It uses the
+Simple DirectMedia Layer (www.libsdl.org) to utilize the graphics
+capabilities of varying systems without worrying about losing
+crossplatform compatibility. It is known to run on the Linux operating
+system and the Windows operating system, and should run on many more,
+but that has not been tested.
+     Epiar is a game in the style of those many space trading war
+games. Inspired by all the similiar games, notably Ambrosia Software's
+Escape Velocity (www.ambrosiasw.com), the authors and contributors of
+Epiar hope to create a commercial quality free computer game with
+great expandability and customizability.
+
+  b) When will Epiar be finished?
+     While the exact date of completion isn't known, we hope to finish
+Epiar sometime in mid-2003. "Finish" means reach version 1.0 with all
+the original features and plans implemented and working very well, but
+it does not mean the game's development stops there. Ideas like
+multilpayer may come after 1.0, and the universe could continue to
+increase, more ships could appear, etc.
+
+ II. System Requirements
+ -----------------------
+  a) Linux x86
+     i386 or compatible, 200 MHz or better (recommended, never tested on lower)
+     glibc v?.?? (Red Hat 6.1 version, please update this)
+	 XFree86 4.x (3.x may work but is not tested)
+	 OSS compatible sound card
+  b) Windows 32
+     Pentium 200 MHz (perferably better)
+	 32MB RAM (or so)
+	 Windows 95/98/ME/NT/2k/XP
+  c) Other Platforms
+     Due to its open source nature, you may take the code for Epiar and attempt
+to compile it on any system you wish. Any platform supported by SDL should
+technically work without too much trouble; this includes, but is not limited to,
+the FreeBSD and Mac OS 9 and X operating systems.
+
+ III. Planned Features
+ ---------------------
+  Epiar is far from complete. The "finished", as in, version 1.0, but not
+necessarily the end of new features, and certainly not the end of bug fixes,
+is planned to contain full landing dialogs, with dozens of ship upgrades, dozens
+of new ships to buy, full trading between planets, complete alliance-based AI,
+and, although maybe not before 1.0, multiplayer capability. It would also be nice
+to split Epiar into two modes, simulation mode (the adventure/role-playing game)
+and arcade mode, where you can select scenarios to play (like defend this ship or
+whatever). An all-around-anything editor is also planned for Epiar; named Reipel,
+it is planned to build this tool using the cross platform widget set GTK+2,
+especially due to its compatibility with X servers and the Win32 platform.
+
+ IV. Contact
+ -----------
+  Please see the contact area of the website: http://www.epiar.net/

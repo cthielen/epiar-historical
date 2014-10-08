@@ -1,0 +1,19 @@
+Main Development Team:
+	Chris Thielen (chris@luethy.net) ...           Main Programmer
+	Marco Lüthy (marco@luethy.net) ...             Web Programmer/Artist
+	Mike Helix (eclipse@luethy.net) ...            Web Programmer
+	Adam Scott (adam@luethy.net) ...               Graphics/Design
+	Eric Sargent (biggnthed@luethy.net) ...        3-D Models/Renders
+	Wes Waugh (wes@luethy.net) ...                 Graphics/Design
+
+Contributions (in order of receiving):
+	Jared Minch ...                                Faster rotate_surface() function (submitted August 22, 2002)
+	Matt Vargeson (matt@luethy.net) ...            Artwork (surfaces, ships)
+	Leigh (stix@ausconnect.net) ...                Artwork (surfaces, ships)
+	Daniel Furuta (chicken_insane@hotmail.com) ... Artwork (ships)
+	Mark Hale (mj_hale@yahoo.com) ...              Network reference and various changes/fixes
+	Matt Gauger (mdgauger@chartermi.net) ...       Textual fixes/corrections
+
+Borrowed Source Code:
+	SDL_gfx-2.0 (http://www.ferzkopp.net/Software/SDL_gfx-2.0/index.html)
+	...                                            Zooming function
