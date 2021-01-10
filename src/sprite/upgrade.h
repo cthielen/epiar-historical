@@ -86,7 +86,9 @@ struct _upgrade {
 	struct _legal_mod legal_mod;
 	struct _visibility_mod visibility_mod;
 	struct _ship_mod ship_mod;
-} upgrades[MAX_UPGRADES];
+};
+
+extern struct _upgrade upgrades[MAX_UPGRADES];
 
 extern int num_upgrades;
 

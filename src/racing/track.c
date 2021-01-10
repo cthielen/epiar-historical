@@ -10,6 +10,8 @@
 short int num_tracks;
 SDL_Surface *marker_on = NULL, *marker_off = NULL;
 
+struct _track tracks[MAX_TRACKS];
+
 int init_tracks_eaf(FILE *eaf, char *filename) {
 	char line[80], name[80];
 	int x, y;

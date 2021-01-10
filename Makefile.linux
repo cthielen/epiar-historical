@@ -1,4 +1,4 @@
-CFLAGS=-W -Wall `sdl-config --cflags` -Isrc/ -DLINUX -DDEVEL -export-dynamic -I/usr/include/SDL -I/usr/local/include/SDL -DBLIT_METHOD_2 -DNAUDIO -pg -g
+CFLAGS=-W -Wall `sdl-config --cflags` -Isrc/ -DLINUX -DDEVEL -export-dynamic -I/usr/include/SDL -I/usr/local/include/SDL -DBLIT_METHOD_2 -DNAUDIO -pg -g -m32
 
 LIBS=-lm `sdl-config --libs` -lSDL_image -ldl
 STATIC_LIBS=-lm /usr/local/lib/libSDL.a /usr/local/lib/libSDL_image.a /usr/local/lib/libSDL_ttf.a /usr/local/lib/libopenal.a /usr/local/lib/libvorbisfile.a /usr/local/lib/libvorbis.a /usr/local/lib/libogg.a /usr/lib/libpng.a /usr/lib/libz.a -lpthread -ldl -lfreetype /usr/lib/libjpeg.a -lX11 -lXext -lesd
@@ -14,15 +14,15 @@ network.o chunk.o gui_btab.o gui_button.o gui.o gui_checkbox.o gui_commondlg.o \
 gui_frame.o gui_image.o gui_keybox.o gui_label.o gui_scrollbar.o \
 gui_session.o gui_tab.o gui_textbox.o gui_text_entry.o gui_window.o gui_listbox.o \
 net_sprite.o upgrade.o eaf.o scenario.o pirate.o outfit.o esf.o font.o \
-timer.o target.o zoom.o r_ships.o warship.o maneuvers.o gate_defender.o
+timer.o target.o zoom.o r_ships.o warship.o maneuvers.o gate_defender.o player.o
 
 PLUGIN_OBJS=
 
-CC=cc
+CC=gcc
 
 default: $(OBJS)
 	@echo Building Epiar 0.5.0 ...
-	$(CC) $(CFLAGS) -I/usr/X11R6/lib/ $(OBJS) -o epiar $(LIBS)
+	$(CC) $(CFLAGS) $(OBJS) -o epiar $(LIBS)
 	@echo Building plugins ...
 	@make -f Makefile.linux plugin
 	@echo Epiar 0.5.0 build complete.
@@ -302,6 +302,9 @@ gate_defender.o: src/ai/gate_defender.c src/ai/gate_defender.h
 
 maneuvers.o: src/ai/maneuvers.c src/ai/maneuvers.h
 	@$(CC) $(CFLAGS) -c src/ai/maneuvers.c
+
+player.o: src/sprite/player.c src/sprite/player.h
+	@$(CC) $(CFLAGS) -c src/sprite/player.c
 
 plugin: $(PLUGIN_OBJS)
 	@echo Plugins built.

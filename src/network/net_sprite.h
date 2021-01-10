@@ -12,7 +12,7 @@ struct _net_ship {
 	short int screen_x, screen_y;
 };
 
-struct _net_ship net_ships[MAX_NET_SHIPS];
+extern struct _net_ship net_ships[MAX_NET_SHIPS];
 
 void init_net_ships(void);
 void new_net_ship(int slot, int type, int x, int y, short int angle, char *callsign);

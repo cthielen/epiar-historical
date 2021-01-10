@@ -32,7 +32,7 @@ struct _planet {
 	int battle_chance; /* chance of battle when player arrives */
 };
 
-struct _planet *planets[MAX_PLANETS];
+extern struct _planet *planets[MAX_PLANETS];
 
 int load_planets_eaf(FILE *eaf, char *filename);
 void unload_planets(void);

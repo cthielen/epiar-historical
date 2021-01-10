@@ -4,6 +4,8 @@
 #include "sprite/model.h"
 #include "system/video/video.h"
 
+struct _net_ship net_ships[MAX_NET_SHIPS];
+
 static int find_free_net_ship_slot(void);
 
 void init_net_ships(void) {

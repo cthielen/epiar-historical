@@ -23,12 +23,16 @@ struct _engine {
 	int acceleration;
 	int top_speed;
 	unsigned char jump;
-} engines[MAX_ENGINES];
+};
+
+extern struct _engine engines[MAX_ENGINES];
 
 struct _shield {
 	char *name;
 	int strength;
-} shields[MAX_SHIELDS];
+};
+
+extern struct _shield shields[MAX_SHIELDS];
 
 /* target structure, used to store information about a target */
 struct _target {

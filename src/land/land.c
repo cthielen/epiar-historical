@@ -19,6 +19,8 @@
 
 #define MAX_DIST 175000 /* how close you have to be to select a planet */
 
+struct _planet_features planet_features;
+
 /* the following four functions are used to know whether or not a button should be displayed for a particular planet */
 static void discern_planet_features(char *planet);
 static void do_planet_hud_message(void);

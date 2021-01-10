@@ -17,13 +17,17 @@ struct _weapon {
 	int initial_ammo;
 	unsigned char homing;
 	char *accepted_ammo;
-} *weapons[MAX_WEAPONS];
+};
+
+extern struct _weapon *weapons[MAX_WEAPONS];
 
 struct _ammo {
 	char *name;
 	char *adds_to;
 	int quantity;
-} *ammos[MAX_AMMO];
+};
+
+extern struct _ammo *ammos[MAX_AMMO];
 
 extern int num_weapons;
 extern int num_ammo;

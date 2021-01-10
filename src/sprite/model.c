@@ -11,6 +11,8 @@
 
 int num_models = 0;
 
+model_t *models[MAX_MODELS];
+
 static model_t *create_model(void);
 static int free_model(model_t *model);
 static int add_model(model_t *model);

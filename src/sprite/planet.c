@@ -13,6 +13,8 @@
 
 int num_planets = 0;
 
+struct _planet *planets[MAX_PLANETS];
+
 static struct _planet *create_default_planet(void);
 static void free_planet(struct _planet *planet);
 

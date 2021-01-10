@@ -13,7 +13,7 @@ struct _particle {
 	Uint32 color;
 };
 
-struct _particle particles[NUM_PARTICLES];
+extern struct _particle particles[NUM_PARTICLES];
 
 void new_explosion(int world_x, int world_y, float momentum_x, float momentum_y, int density, Uint32 length);
 void erase_particles(void);

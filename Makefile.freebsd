@@ -14,7 +14,7 @@ network.o chunk.o gui_btab.o gui_button.o gui.o gui_checkbox.o gui_commondlg.o \
 gui_frame.o gui_image.o gui_keybox.o gui_label.o gui_scrollbar.o \
 gui_session.o gui_tab.o gui_textbox.o gui_text_entry.o gui_window.o gui_listbox.o \
 net_sprite.o upgrade.o eaf.o scenario.o pirate.o outfit.o esf.o font.o \
-timer.o target.o zoom.o r_ships.o warship.o maneuvers.o
+timer.o target.o zoom.o r_ships.o warship.o maneuvers.o player.o
 
 PLUGIN_OBJS=
 
@@ -299,6 +299,9 @@ warship.o: src/ai/warship.c src/ai/warship.h
 
 maneuvers.o: src/ai/maneuvers.c src/ai/maneuvers.h
 	@$(CC) $(CFLAGS) -c src/ai/maneuvers.c
+
+player.o: src/sprite/player.c src/sprite/player.h
+	@$(CC) $(CFLAGS) -c src/sprite/player.c
 
 plugin: $(PLUGIN_OBJS)
 	@echo Plugins built.

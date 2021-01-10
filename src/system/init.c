@@ -34,7 +34,10 @@ int init(int bpp) {
 	fprintf(stdout, "http://www.epiar.net/\n");
 	fprintf(stdout, "\nPlease report all bugs at http://bugs.epiar.net/\n\n");
 
-	setup_video(screen_width, screen_height, bpp, fullscreen);
+	if(setup_video(screen_width, screen_height, bpp, fullscreen) != 0) {
+		fprintf(stderr, "Could not initialize video\n");
+		return(-1);
+	}
 
 	init_colors(); /* basically sets up common Uint32s to avoid calls to SDL_MapRGB() */
 

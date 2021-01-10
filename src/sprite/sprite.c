@@ -41,6 +41,8 @@ model_t *player_model = NULL;
 int player_x = 0, player_y = 0;
 
 struct _ship *ships[MAX_SHIPS];
+struct _engine engines[MAX_ENGINES];
+struct _shield shields[MAX_SHIELDS];
 
 enum _ship_type {WEAK, TRADER, MILITARY, PIRATE};
 

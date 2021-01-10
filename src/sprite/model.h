@@ -39,7 +39,7 @@ typedef struct _model {
 	enum MODEL_TYPE class;
 } model_t;
 
-model_t *models[MAX_MODELS];
+extern model_t *models[MAX_MODELS];
 
 extern int num_models;
 

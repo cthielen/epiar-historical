@@ -6,6 +6,8 @@
 
 int num_alliances = 0;
 
+struct _alliance alliances[MAX_ALLIANCES];
+
 int load_alliances_eaf(FILE *eaf, char *filename) {
   parsed_file *alliances_esf = NULL;
   

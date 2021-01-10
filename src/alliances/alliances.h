@@ -12,7 +12,9 @@ struct _alliance {
 	short int aggression; /* 0 - peaceful, 10 - warring */
 	model_t **used_models; /* types the alliance uses - needed for ship generation and battles */
 	int num_used_models;
-} alliances[MAX_ALLIANCES];
+};
+
+extern struct _alliance alliances[MAX_ALLIANCES];
 
 extern int num_alliances;
 

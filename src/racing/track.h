@@ -8,7 +8,9 @@ struct _track {
 	short int num_buoys, buoys_cleared, class, w, h; /* w, h is max. width height of track (used for drawing) */
 	int prize;
 	int buoys[MAX_BUOY_PAIRS][4]; /* x, y, angle, on/off */
-} tracks[MAX_TRACKS];
+};
+
+extern struct _track tracks[MAX_TRACKS];
 
 extern short int num_tracks;
 

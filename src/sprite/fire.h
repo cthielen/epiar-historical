@@ -15,7 +15,9 @@ struct _fire {
 	int angle; /* angle of the shot */
 	int velocity;
 	Uint32 expire_time;
-} fires[MAX_FIRES];
+};
+
+extern struct _fire fires[MAX_FIRES];
 
 extern int num_fires;
 extern struct _fire *ordered_fires[MAX_FIRES];

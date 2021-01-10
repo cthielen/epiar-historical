@@ -14,7 +14,7 @@ struct _flare {
 	int start_angle, end_angle;
 };
 
-struct _flare flares[NUM_FLARES];
+extern struct _flare flares[NUM_FLARES];
 
 void init_flares(void);
 void uninit_flares(void);

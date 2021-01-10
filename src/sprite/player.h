@@ -20,6 +20,8 @@ struct _player {
 
 	/* purchased outfits */
 	outfit_item *upgrades[MAX_OUTFITS];
-} player;
+};
+
+extern struct _player player;
 
 #endif

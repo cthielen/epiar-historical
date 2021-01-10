@@ -5,6 +5,8 @@
 #include "sprite/sprite.h"
 #include "system/math.h"
 
+struct _ship *r_ships[MAX_R_SHIPS];
+
 int init_r_ships(void) {
 
 	return (0);

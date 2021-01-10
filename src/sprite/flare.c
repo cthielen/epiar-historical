@@ -4,6 +4,8 @@
 #include "system/timer.h"
 #include "system/video/video.h"
 
+struct _flare flares[NUM_FLARES];
+
 void init_flares(void) {
 	int i;
 

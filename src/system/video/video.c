@@ -121,13 +121,18 @@ int setup_video(int width, int height, int bpp, unsigned char fullscreen) {
 	const SDL_VideoInfo *video_info = NULL;
 	Uint8 bpp_received;
 
+	printf("1\n");
+
 	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) != 0) {
 		debug_message("\n    Could not initalize SDL: ");
+		fprintf(stdout, "Error: %s\n", SDL_GetError());
 		debug_message(SDL_GetError());
 		return (-1);
 	}
 
 	atexit(SDL_Quit);
+
+	printf("2\n");
 
 	screen = SDL_SetVideoMode(width, height, bpp, (fullscreen ? SDL_FULLSCREEN : 0));
 	if (screen == NULL) {
@@ -135,6 +140,8 @@ int setup_video(int width, int height, int bpp, unsigned char fullscreen) {
 		debug_message(SDL_GetError());
 		return (-1);
 	}
+
+	printf("3\n");
 
 	/* get information about video */
 	video_info = SDL_GetVideoInfo();
@@ -236,6 +243,7 @@ int flip(void) {
 }
 
 Uint32 map_rgb(int r, int g, int b) {
+	assert(screen != NULL);
 	return (SDL_MapRGB(screen->format, r, g, b));
 }
 

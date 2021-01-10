@@ -17,6 +17,7 @@
 #endif
 
 struct _fire *ordered_fires[MAX_FIRES];
+struct _fire fires[MAX_FIRES];
 
 int num_fires = 0;
 static int get_free_weapon_slot(void);

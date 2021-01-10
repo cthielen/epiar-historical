@@ -8,6 +8,8 @@
 #include "system/video/backbuffer.h"
 #include "system/video/video.h"
 
+struct _particle particles[NUM_PARTICLES];
+
 void init_particles(void) {
 	int i;
   

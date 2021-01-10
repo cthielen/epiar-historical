@@ -12,6 +12,9 @@
 int num_weapons = 0;
 int num_ammo = 0;
 
+struct _weapon *weapons[MAX_WEAPONS];
+struct _ammo *ammos[MAX_AMMO];
+
 /* adds weapon to the main weapon list */
 static int add_weapon(struct _weapon *weapon);
 static int add_ammo(struct _ammo *ammo);

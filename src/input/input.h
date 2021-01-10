@@ -24,9 +24,11 @@ struct _keys {
 	SDLKey pri_last;
 	SDLKey sec_next;
 	SDLKey sec_last;
-} keys;
+};
 
-struct {
+extern struct _keys keys;
+
+struct _key_locks {
 	unsigned char quit,
 	              rotate_left,
 	              rotate_right,
@@ -52,7 +54,9 @@ struct {
 				  pri_last,
 				  sec_next,
 				  sec_last;
-} key_locks;
+};
+
+extern struct _key_locks key_locks;
 
 /* certain actions, requiring the gui, must be done right after draw, and not after erase */
 /* (when get_input() is run), in order to get the background transparency */
@@ -63,7 +67,9 @@ struct _post_draw {
 	unsigned char options;
 	unsigned char nav;
 	unsigned char board;
-} post_draw;
+};
+
+extern struct _post_draw post_draw;
 
 int load_input_cfg(void);
 int get_input(void);

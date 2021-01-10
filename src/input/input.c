@@ -37,6 +37,10 @@ struct {
 		fire_sec;
 } tracked_keys;
 
+struct _post_draw post_draw;
+struct _key_locks key_locks;
+struct _keys keys;
+
 static char *time_stamp(void);
 static void set_default_keybindings(void);
 

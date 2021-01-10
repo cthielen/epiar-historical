@@ -10,7 +10,9 @@ struct _planet_features {
 	model_t *ships_available[MAX_MODELS];
 	outfit_item *outfits_available[MAX_OUTFITS];
 	int num_ships, num_outfits;
-} planet_features;
+};
+
+extern struct _planet_features planet_features;
 
 typedef enum _land_options {DEPART, SUMMARY, OUTFIT, SHIPYARD, EMPLOYMENT, BAR} land_options;
 

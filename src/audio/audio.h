@@ -4,7 +4,7 @@
 ALuint fire_source[7];
 #endif
 
-unsigned char audio_enabled;
+extern unsigned char audio_enabled;
 
 int init_audio(void);
 void cleanup_audio(void);
